@@ -1,0 +1,119 @@
+# Main function
+snippet main "Entry point"
+proc main in
+	$1
+end
+endsnippet
+
+# Include
+snippet inc "Include file"
+include "${1:std.porth}"
+endsnippet
+
+# std + main
+snippet smain "description"
+include "std.porth"
+
+proc main in
+	$1
+end
+endsnippet
+
+# In keyword
+snippet in "in-end structure"
+in
+	$1
+end
+endsnippet
+
+# Puts
+snippet puts "Print the string on top of the stack in a free form to stdout and remove it from the stack"
+$1 puts
+endsnippet
+
+# Putu
+snippet putu "Print the number on top of the stack in a free form to stdout and remove it from the stack"
+$1 putu
+endsnippet
+
+# While loop
+snippet while "While loop"
+while $1 do
+	$2
+end
+endsnippet
+
+# Procedure
+snippet proc "Procedure"
+proc $1 in
+
+end
+endsnippet
+
+# Inline procedure
+snippet iproc "Inline procedure"
+inline proc $1 in
+	$2
+end
+endsnippet
+
+# Constant
+snippet const "Constant"
+const $1 $2 end
+endsnippet
+
+# Memory
+snippet mem "Memory"
+memory $1 $2 end
+endsnippet
+
+# Let
+snippet let "Grabs elements from the stack and drops them after the block"
+let $1 in
+	$2
+end
+endsnippet
+
+# Peek
+snippet peek "Grabs elements from the stack"
+peek $1 in
+	$2
+end
+endsnippet
+
+# Print
+snippet print "Print the element on top of the stack in a free form to stdout and remove it from the stack"
+$1 print
+endsnippet
+
+# Exit
+snippet exit "Exit with exit code"
+$1 exit
+endsnippet
+
+# If
+snippet if "if-condition"
+$1 if
+	$2
+end
+endsnippet
+
+# If-else
+snippet if "if-else-condition"
+$1 if
+	$2
+else
+	$3
+end
+endsnippet
+
+# If-elseif
+snippet if "If-elseif-condition"
+$1 if
+	$2
+else $3 if*
+	$4
+else
+	$5
+end
+endsnippet
