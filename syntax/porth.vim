@@ -11,6 +11,7 @@ syntax keyword porthKeywords if if* else while do include memory proc const end 
 
 " Comments
 syntax region porthCommentLine start="//" end="$"   contains=porthTodos
+set commentstring=//%s
 
 " String literals
 syntax region porthString start=/\v"/ skip=/\v\\./ end=/\v"/ contains=porthEscapes
