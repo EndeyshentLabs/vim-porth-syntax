@@ -28,6 +28,9 @@ syntax region porthNumber start=/\s\d/ skip=/\d/ end=/\s/
 " syntax match  porthNumber "\-\?\<\d\+\>" display
 " syntax match  porthNumber "\s(.*?)\s" display
 " syntax match  porthNumber "[^\s](.*?)\s" display
+"" Original Forth integers
+" syntax match  porthNumber '\<-\=[0-9]\+.\=\>'
+" syntax match  porthNumber '\<&-\=[0-9]\+.\=\>'
 
 " Type names the compiler recognizes
 syntax keyword porthTypeNames addr int ptr bool
