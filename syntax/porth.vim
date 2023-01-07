@@ -23,7 +23,11 @@ syntax region porthChar start=/\v'/ skip=/\v\\./ end=/\v'/ contains=porthEscapes
 syntax match porthEscapes display contained "\\[nr\"']"
 
 " Number literals
+" TODO: Choose the best matcher
 syntax region porthNumber start=/\s\d/ skip=/\d/ end=/\s/
+" syntax match  porthNumber "\-\?\<\d\+\>" display
+" syntax match  porthNumber "\s(.*?)\s" display
+" syntax match  porthNumber "[^\s](.*?)\s" display
 
 " Type names the compiler recognizes
 syntax keyword porthTypeNames addr int ptr bool
