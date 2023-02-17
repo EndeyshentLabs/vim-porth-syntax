@@ -22,7 +22,8 @@ syntax region porthChar start=/\v'/ skip=/\v\\./ end=/\v'/ contains=porthEscapes
 syntax match porthEscapes display contained "\\[nr\"']"
 
 " Number literals
-syntax match porthNumber "\<-\=\d\+\>" display
+syntax match porthNumber "\<-\=\d*\+\>" display
+" I dont know about this
 
 " Type names the compiler recognizes
 syntax keyword porthTypeNames addr int ptr bool
@@ -32,6 +33,7 @@ highlight default link porthKeywords Keyword
 highlight default link porthCommentLine Comment
 highlight default link porthString String
 highlight default link porthNumber Number
+highlight default link porthFloat Float
 highlight default link porthTypeNames Type
 highlight default link porthChar Character
 highlight default link porthEscapes SpecialChar
