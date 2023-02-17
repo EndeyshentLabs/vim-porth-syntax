@@ -21,9 +21,8 @@ syntax region porthChar start=/\v'/ skip=/\v\\./ end=/\v'/ contains=porthEscapes
 " Escape literals \n, \r, ....
 syntax match porthEscapes display contained "\\[nr\"']"
 
-" Number literals                    WTF is this dot
-"                                     v
-syntax match porthNumber '\<-\=[0-9]\+.\=\>' display
+" Number literals
+syntax match porthNumber '\<-\=[0-9]\+\=\>' display
 
 " Type names the compiler recognizes
 syntax keyword porthTypeNames addr int ptr bool
