@@ -3,14 +3,14 @@ if exists("b:current_syntax")
   finish
 endif
 
-set iskeyword=a-z,A-Z,-,*,_,!,@
+set iskeyword=a-z,A-Z,-,*,_,!,@,0-9
 syntax keyword porthTodos TODO XXX FIXME NOTE
 
 " Language keywords
 syntax keyword porthKeywords if if* else while do include memory proc const end offset reset assert in inline here addr-of call-like let peek
 
 " Comments
-syntax region porthCommentLine start="//" end="$"   contains=porthTodos
+syntax region porthCommentLine start="//" end="$" contains=porthTodos
 
 " String literals
 syntax region porthString start=/\v"/ skip=/\v\\./ end=/\v"/ contains=porthEscapes
@@ -21,14 +21,9 @@ syntax region porthChar start=/\v'/ skip=/\v\\./ end=/\v'/ contains=porthEscapes
 " Escape literals \n, \r, ....
 syntax match porthEscapes display contained "\\[nr\"']"
 
-" Number literals
-" TODO: Choose the best matcher
-" syntax region porthNumber start=/\s\d/ skip=/\d/ end=/\s/
-" syntax match  porthNumber "\-\?\<\d\+\>" display
-" syntax match  porthNumber "\s(.*?)\s" display
-" syntax match  porthNumber "[^\s](.*?)\s" display
-"" Original Forth integers
-syntax match  porthNumber '\<-\=[0-9]\+.\=\>'
+" Number literals                    WTF is this dot
+"                                     v
+syntax match porthNumber '\<-\=[0-9]\+.\=\>' display
 
 " Type names the compiler recognizes
 syntax keyword porthTypeNames addr int ptr bool
