@@ -22,7 +22,7 @@ syntax region porthChar start=/\v'/ skip=/\v\\./ end=/\v'/ contains=porthEscapes
 syntax match porthEscapes display contained "\\[nr\"']"
 
 " Number literals
-syntax match porthNumber "\<-\=\d\+\>" display
+syntax region porthNumber start=/\s\d/ skip=/\d/ end=/\s/
 " I dont know about this
 
 " Type names the compiler recognizes
