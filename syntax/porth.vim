@@ -3,7 +3,7 @@ if exists("b:current_syntax")
   finish
 endif
 
-set iskeyword=a-z,A-Z,-,*,_,!,@,0-9
+set iskeyword=a-z,A-Z,-,*,_,!,@
 syntax keyword porthTodos TODO XXX FIXME NOTE
 
 " Language keywords
