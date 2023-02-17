@@ -11,7 +11,6 @@ syntax keyword porthKeywords if if* else while do include memory proc const end 
 
 " Comments
 syntax region porthCommentLine start="//" end="$"   contains=porthTodos
-set commentstring=//%s
 
 " String literals
 syntax region porthString start=/\v"/ skip=/\v\\./ end=/\v"/ contains=porthEscapes
@@ -24,13 +23,12 @@ syntax match porthEscapes display contained "\\[nr\"']"
 
 " Number literals
 " TODO: Choose the best matcher
-syntax region porthNumber start=/\s\d/ skip=/\d/ end=/\s/
+" syntax region porthNumber start=/\s\d/ skip=/\d/ end=/\s/
 " syntax match  porthNumber "\-\?\<\d\+\>" display
 " syntax match  porthNumber "\s(.*?)\s" display
 " syntax match  porthNumber "[^\s](.*?)\s" display
 "" Original Forth integers
-" syntax match  porthNumber '\<-\=[0-9]\+.\=\>'
-" syntax match  porthNumber '\<&-\=[0-9]\+.\=\>'
+syntax match  porthNumber '\<-\=[0-9]\+.\=\>'
 
 " Type names the compiler recognizes
 syntax keyword porthTypeNames addr int ptr bool
